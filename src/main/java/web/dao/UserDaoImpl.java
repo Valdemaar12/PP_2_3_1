@@ -27,12 +27,12 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @Transactional(readOnly = true)
-    public User findUserById(long id) {//todo: обычно не используем примитивы
+    public User findUserById(Long id) {//todo: обычно не используем примитивы
         return entityManager.find(User.class, id);
     }
 
     @Override
-    public void deleteUserById(long id) {
+    public void deleteUserById(Long id) {
         entityManager.remove(entityManager.find(User.class, id));
     }
 
