@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @Transactional(readOnly = true)
-    public User findUserById(long id) {
+    public User findUserById(long id) {//todo: обычно не используем примитивы
         return entityManager.find(User.class, id);
     }
 

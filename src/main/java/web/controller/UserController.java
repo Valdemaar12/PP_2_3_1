@@ -37,11 +37,9 @@ public class UserController {
 
     @PostMapping("/user-add")
     public String addUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
-
         if (bindingResult.hasErrors()) {
             return "user-add";
         }
-
         userService.addUser(user);
         return "redirect:/";
     }
@@ -54,11 +52,9 @@ public class UserController {
 
     @PostMapping("/user-update")
     public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
-
         if (bindingResult.hasErrors()) {
             return "user-update";
         }
-
         userService.updateUser(user);
         return "redirect:/";
     }
@@ -68,5 +64,4 @@ public class UserController {
         userService.deleteUserById(id);
         return "redirect:/";
     }
-
 }
